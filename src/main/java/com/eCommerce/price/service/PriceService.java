@@ -14,6 +14,6 @@ import com.eCommerce.price.model.*;
 @Service
 public interface PriceService {
 public List<Price> getAllPrices();
-public float getPriceByID(int productID);
+public Price getPriceByID(int productID);
 
 }

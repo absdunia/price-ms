@@ -35,17 +35,13 @@ public class PriceServiceImpl implements PriceService {
 	}
 
 	@Override
-	public float getPriceByID(int productID) {
-		StringBuilder response = new StringBuilder();
-		if (productID == 0) {
-			return 0;
-		} else {
-			price = priceCRUDRepository.findByProductID(productID);
-			System.out.println("Product Id : " + productID + "and the price of the product is " + price.getPrice());
-			return price.getPrice();
+	public Price getPriceByID(int productID) {
+		
+		price = priceCRUDRepository.findByProductID(productID);
+		System.out.println("Product Id : " + productID + "and the price of the product is " + price.getPrice());
+		return price;
 
 		}
-	}
 
 	public Price saveNewPrice(Price price2) {
 		System.out.println("Price displaying" + price2.getPrice() + "Product ID" + price2.getProductID());

@@ -39,10 +39,10 @@ public class PriceController {
 	}
  
 	@PutMapping(value="/updatePriceByID",consumes="application/json",produces="application/json")
- public Price updatePrice(@RequestBody Price price)
- {
-	return priceServiceImpl.updatePrice(price);
-}
+	public Price updatePrice(@RequestBody Price price)
+	{
+		return priceServiceImpl.updatePrice(price);
+	}
 	
 	@GetMapping(value ="/getAllPrices",produces="application/json")
 	public List<Price> getAllPrices(){
@@ -50,14 +50,14 @@ public class PriceController {
 		return priceServiceImpl.getAllPrices();
 	}
 	
-   @DeleteMapping(value="/deleteByProductID",consumes="application/json",produces="application/json")
-	public String removeStudent(@RequestParam String productID)
+   @DeleteMapping(value="/deleteByProductID",produces="application/json")
+	public String removePrices(@RequestParam String productID)
 	{
 	return priceServiceImpl.deleteProductByID(productID);
 	}
 	
    @GetMapping(value ="/getPriceByID",produces="application/json")
-	public float getPriceByID(@RequestParam String productID){
+	public Price getPriceByID(@RequestParam String productID){
 		
 		return priceServiceImpl.getPriceByID(Integer.parseInt(productID));
 		}
